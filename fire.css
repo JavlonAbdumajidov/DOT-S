@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+.fire{
+    position: relative;
+    left: -9999px;
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+    box-shadow: -9999px 22.5px 0 -5px;
+    animation: fire 1.5s infinite linear;
+    animation-delay: -0.85s;
+}
+.fire::before, .fire::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: 0;
+    width: 30px;
+    height:30px;
+    border-radius: 50%;
+}
+.fire::before{
+    box-shadow: 9999px 22.5px 0 -5px;
+    animation: fire 1.5s infinite linear;
+    animation-delay: -1.85s;
+}
+.fire::after{
+    box-shadow: 9999px 22.5px 0 -5px;
+    animation: fire 1.5s infinite linear;
+    animation-delay: -2.85s;
+}
+@keyframes fire{
+    1%{
+        box-shadow: 9999px 22.5px 0 -5px grey;
+    }
+    50%{
+        box-shadow: 9999px -5.625px 0 2px gray;
+    }
+    100%{
+        box-shadow: 9999px -22.5px 0 -5px darkgray;
+    }
+}
+img{
+    position: absolute;
+    bottom: 235px;
+    left: 643px;
+    width: 150px;
+    height: 150px;
+}

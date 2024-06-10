@@ -1,0 +1,64 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: bc 1s infinite alternate;
+}
+.flashing{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: green;
+    border-radius: 50%;
+    animation: flashing 1s infinite alternate;
+    animation-delay: 0.25s;
+}
+.flashing::before,.flashing::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: 0;
+}
+.flashing::before{
+    width: 20px;
+    height: 20px;
+    background-color: darkgreen;
+    border-radius: 50%;
+    left: -30px;
+    animation: flashing 1s infinite alternate;
+}
+.flashing::after{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightgreen;
+    animation: flashing 1s infinite alternate;
+    left: 30px;
+    animation-delay: 0.5s;
+}
+@keyframes flashing{
+    0%{
+        background-color: darkgreen;
+    }
+    25%{
+        background-color: green;
+    }
+    50%,100%{
+        background-color: lightgreen;
+    }
+}
+@keyframes bc{
+    0%{
+        background-color: lightgreen;
+    }
+    25%{
+        background-color: darkgreen;
+    }
+    50%,100%{
+        background-color: green;
+    }
+}

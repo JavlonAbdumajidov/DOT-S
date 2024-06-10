@@ -1,0 +1,105 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+.puls{
+    position: relative;
+    left: -9999px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    box-shadow: -9984px 0 0 -5px;
+    animation: puls 1s infinite linear;
+}
+.puls::before,.puls::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+.puls::before{
+    box-shadow: 9999px 0 0 -5px;
+    animation: puls-before 1s infinite linear;
+    animation-delay: 0.25s;
+}
+.puls::after{
+    box-shadow: 10014px 0 0 -5px;
+    animation: puls-after 1s infinite linear;
+    animation-delay: 0.5s;
+}
+@keyframes puls{
+    0%{
+        box-shadow: 9984px 0 0 -5px blue;
+        height: 15px;
+    }
+    30%{
+        box-shadow: 9984px 0 0 2px red;
+        height: 20px;
+    }
+    60%,100%{
+        box-shadow: 9984px 0 0 -5px blue;
+        height: 15px;
+    }
+}
+@keyframes puls-before{
+    0%{
+        box-shadow: 9999px 0 0 -5px blue;
+        height: 20px;
+    }
+    30%{
+        box-shadow: 9999px 0 0 2px red;
+        height: 50px;
+        top: -15px;
+    }
+    60%,100%{
+        box-shadow: 9999px 0 0 -5px blue;
+        height: 20px;
+    }
+}
+@keyframes puls-after{
+    0%{
+        box-shadow: 10014px 0 0 -5px blue;
+        height: 15px;
+
+    }
+    30%{
+        box-shadow: 10014px 0 0 2px red;
+        height: 20px;
+    }
+    60%,100%{
+        box-shadow: 10014px 0 0 -5px blue;
+        height: 15px;
+    }
+}
+h2{
+    position: absolute;
+    color: blue;
+    top: 330px;
+    font-weight: 900;
+    font-size: 40px;
+    left: 650px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    animation: text 1s infinite linear;
+}
+@keyframes text{
+    0%{
+        transform: scale(1);
+    }
+    30%{
+        transform: scale(1.2);
+        color: red;
+    }
+    60%,100%{
+        transform: scale(1);
+    }
+}

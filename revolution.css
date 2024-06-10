@@ -1,0 +1,81 @@
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:black ;
+}
+.revolution{
+    position: relative;
+    width: 40px;
+    height:40px;
+    border-radius:50%;
+    background-color: gold;
+    box-shadow: 0 0 50px 20px white;
+    top: 300px;
+}
+.revolution::before,.revolution::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+}
+.revolution::before{
+    top: -48px;
+    left: -30px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    animation: revolution 5s linear infinite;
+    transform-origin: 50px 78px;
+} 
+ .revolution::after{
+    top: -34px;
+    left: 17px;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 5px;
+    transform-origin: 5px 56px;
+    animation: revolution 5s linear infinite;
+}
+.revolution1,.revolution2{
+    position: absolute;
+    content: "";
+    display: inline-block;
+}
+.revolution1{
+    top: -53px;
+    left: -30px;
+    width: 15px;
+    height: 15px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    animation: revolution 10s linear infinite;
+    transform-origin: 50px 185px;
+    border-inline-start-color: rebeccapurple;
+    top: 155px;
+    left: 720px;
+}
+ .revolution2{
+    top: -100px;
+    left: 10px;
+    width: 17px;
+    height: 17px;
+    background-color: sienna;
+    border-radius: 50%;
+    transform-origin: 5px 155px;
+    animation: revolution 10s linear infinite;
+    top: 185px;
+    left: 770px;
+} 
+@keyframes revolution{
+    0%{
+        transform: rotateZ(0deg) translate3d(0,0,0);
+    }
+    100%{
+        transform: rotateZ(360deg) translate3d(0,0,0);
+    }
+}

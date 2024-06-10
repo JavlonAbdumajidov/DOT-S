@@ -1,0 +1,73 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: black;
+    animation: coll 1s infinite ease-in;
+}
+.collision{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: gray;
+    animation: collision 1s infinite ease-in;
+}
+.collision::before,.collision::after{
+    position: absolute;
+    content: "";
+    display: inline-block;
+    top: 0;
+}
+.collision::before{
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 10px;
+    animation: collision-before 2s infinite ease-in;
+    animation-delay: 1s;
+}
+.collision::after{
+    left: -20px;
+    width: 20px;
+    height: 20px;
+    background-color: gray;
+    border-radius: 10px;
+    animation: collision-after 2s infinite ease-in;
+}
+
+@keyframes collision-before{
+    0%,50%,75%,100%{
+        transform: translateX(0px);
+        background-color: gray;
+    }
+    25%{
+        transform: translateX(30px);
+        background-color: white;
+    }
+}
+@keyframes collision-after{
+    0%,50%,75%,100%{
+        transform: translateX(0px);
+        background-color: gray;
+    }
+    25%{
+        transform: translateX(-30px);
+        background-color: white;
+    }
+}
+@keyframes collision{
+    0%{
+        background-color: whitesmoke;
+    }
+}
+@keyframes coll{
+    0%{
+        background-color: whitesmoke;
+    }
+}
